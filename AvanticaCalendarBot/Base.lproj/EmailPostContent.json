@@ -1,0 +1,21 @@
+{
+    "Message": {
+        "toRecipients": [{
+                         "emailAddress": {
+                         "address": "<EMAIL>"
+                         }
+                         }],
+        "@odata.type": "#microsoft.graph.message",
+        "subject": "MAIL_SUBJECT",
+        "body": {
+            "contentType": "<CONTENTTYPE>",
+            "content": "<CONTENT>"},
+        "attachments": [{
+                        "@odata.type": "<ODATA.TYPE>",
+                        "contentType": "<IMAGE.TYPE>",
+                        "contentBytes": "<CONTENTBYTES>",
+                        "name": "<NAME>"
+                        }]
+    },
+    "SaveToSentItems": false
+}

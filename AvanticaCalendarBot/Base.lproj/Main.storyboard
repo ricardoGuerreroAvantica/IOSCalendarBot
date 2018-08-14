@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uGc-al-Cx3">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Avantica Calendar Bot Connect-->
+        <scene sceneID="qbB-U0-lGs">
+            <objects>
+                <viewController id="EER-pl-Qyl" customClass="ConnectViewController" customModule="AvanticaCalendarBot" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xhd-ZI-IgT"/>
+                        <viewControllerLayoutGuide type="bottom" id="kJJ-eU-XYD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bjh-3P-mNL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rPH-Aq-OvZ">
+                                <rect key="frame" x="130.66666666666666" y="353" width="152.99999999999997" height="30"/>
+                                <state key="normal" title="Connect to Office 365">
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="connect:" destination="EER-pl-Qyl" eventType="touchUpInside" id="UMW-a3-N4u"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ffk-iV-PbL">
+                                <rect key="frame" x="169" y="241.5" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="0.2725624144077301" green="0.58256793022155762" blue="0.99852830171585083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7H-jF-tio">
+                                <rect key="frame" x="164" y="461" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="rPH-Aq-OvZ" secondAttribute="centerY" id="V0N-V3-maG"/>
+                            <constraint firstAttribute="centerX" secondItem="rPH-Aq-OvZ" secondAttribute="centerX" id="uVe-oB-9XO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Avantica Calendar Bot Connect" id="GsL-UA-k9u">
+                        <barButtonItem key="rightBarButtonItem" title="Disconnect" id="bLc-Iq-hXP">
+                            <connections>
+                                <action selector="disconnect:" destination="EER-pl-Qyl" id="kKL-5X-xet"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="ffk-iV-PbL" id="Ym4-so-CX4"/>
+                        <outlet property="connectButton" destination="rPH-Aq-OvZ" id="Nzr-VV-eBU"/>
+                        <segue destination="VCN-Rg-8RT" kind="push" identifier="LogInSucessfull" id="vNb-81-P4b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Eg-32-iPU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4719" y="-2035"/>
+        </scene>
+        <!--Message Box View Controller-->
+        <scene sceneID="qgo-m5-pg7">
+            <objects>
+                <viewController id="VCN-Rg-8RT" customClass="MessageBoxViewController" customModule="AvanticaCalendarBot" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1Ga-8a-DD6"/>
+                        <viewControllerLayoutGuide type="bottom" id="Chd-TO-OoV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SDv-b6-VY3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AVANTICA CALENDAR BOT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfB-Pq-DBq">
+                                <rect key="frame" x="0.0" y="64" width="414" height="54"/>
+                                <color key="backgroundColor" red="0.87840025906735753" green="0.87840025906735753" blue="0.87840025906735753" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zD7-6E-TfK">
+                                <rect key="frame" x="323" y="201" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TeS-5p-mEA">
+                                <rect key="frame" x="0.0" y="126" width="414" height="560"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="560" id="d3R-Cr-Vqv"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g9J-fb-bfs">
+                                <rect key="frame" x="0.0" y="706" width="326" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfK-XN-v8n">
+                                <rect key="frame" x="334" y="706" width="80" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="rLU-Ag-ESo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="SEND"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="g9J-fb-bfs" firstAttribute="top" secondItem="mfK-XN-v8n" secondAttribute="top" id="32X-zf-ap9"/>
+                            <constraint firstItem="g9J-fb-bfs" firstAttribute="top" secondItem="TeS-5p-mEA" secondAttribute="bottom" constant="20" id="9bB-rZ-twP"/>
+                            <constraint firstItem="TeS-5p-mEA" firstAttribute="top" secondItem="SDv-b6-VY3" secondAttribute="top" constant="126" id="FKk-hT-zWL"/>
+                            <constraint firstItem="mfK-XN-v8n" firstAttribute="leading" secondItem="g9J-fb-bfs" secondAttribute="trailing" constant="8" symbolic="YES" id="Fpe-pU-tN8"/>
+                            <constraint firstItem="mfK-XN-v8n" firstAttribute="trailing" secondItem="TeS-5p-mEA" secondAttribute="trailing" id="K0C-mj-eYK"/>
+                            <constraint firstItem="TeS-5p-mEA" firstAttribute="leading" secondItem="SDv-b6-VY3" secondAttribute="leading" id="PFV-By-HKN"/>
+                            <constraint firstItem="lfB-Pq-DBq" firstAttribute="top" secondItem="1Ga-8a-DD6" secondAttribute="bottom" id="SLs-1S-78G"/>
+                            <constraint firstAttribute="trailing" secondItem="TeS-5p-mEA" secondAttribute="trailing" id="TLh-uL-6J3"/>
+                            <constraint firstItem="g9J-fb-bfs" firstAttribute="leading" secondItem="TeS-5p-mEA" secondAttribute="leading" id="XFr-qO-i4g"/>
+                            <constraint firstItem="lfB-Pq-DBq" firstAttribute="trailing" secondItem="TeS-5p-mEA" secondAttribute="trailing" id="g2H-5P-l1Y"/>
+                            <constraint firstItem="lfB-Pq-DBq" firstAttribute="leading" secondItem="TeS-5p-mEA" secondAttribute="leading" id="m7m-jA-LZN"/>
+                            <constraint firstItem="TeS-5p-mEA" firstAttribute="top" secondItem="lfB-Pq-DBq" secondAttribute="bottom" constant="8" symbolic="YES" id="sYb-EP-CgI"/>
+                            <constraint firstItem="mfK-XN-v8n" firstAttribute="bottom" secondItem="Chd-TO-OoV" secondAttribute="top" id="ujV-Cb-6kv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="9zD-vG-fqC"/>
+                    <connections>
+                        <outlet property="chipResponse" destination="TeS-5p-mEA" id="kwm-PR-gFM"/>
+                        <outlet property="messageField" destination="g9J-fb-bfs" id="3Yu-lz-6RD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Td4-oC-1dl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3853.6231884057975" y="-2035.5978260869567"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rss-wV-nq7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uGc-al-Cx3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="O9A-Et-agD">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EER-pl-Qyl" kind="relationship" relationship="rootViewController" id="FeP-Jg-nqV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fKy-ly-8af" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5408" y="-2034"/>
+        </scene>
+    </scenes>
+</document>
