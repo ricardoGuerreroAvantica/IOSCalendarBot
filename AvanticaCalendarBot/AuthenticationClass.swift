@@ -78,6 +78,13 @@ class AuthenticationClass {
                         let defaults = UserDefaults.standard;
                         defaults.set(self.accessToken,forKey: "UserToken");
                         print(defaults.string(forKey: "UserToken"));
+                        if (defaults.string(forKey: "AppId")==nil){
+                            defaults.set(UUID().uuidString,forKey: "AppId");
+                        }
+                        print(defaults.string(forKey: "AppId"));
+                        //EL USUARIO SE LOGGEO, ENVIA EL TOKE
+                        //FALTA IMPLEMENTAR
+                        
                     } else {
                         
                         //"Could not acquire token silently: \(error ?? "No error information" as! Error )"

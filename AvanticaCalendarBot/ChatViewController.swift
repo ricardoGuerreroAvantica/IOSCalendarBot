@@ -31,7 +31,7 @@ class ChatViewController: UIViewController {
             self.chipResponse.text = "You need to be logged to access my information!";
         }
     }
-    /**
+
     //This functions are in charge of sending the message:
     let speechSynthesizer = AVSpeechSynthesizer()
     
@@ -64,7 +64,7 @@ class ChatViewController: UIViewController {
         ApiAI.shared().enqueue(request)
         messageField.text = ""
     }
-    */
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
