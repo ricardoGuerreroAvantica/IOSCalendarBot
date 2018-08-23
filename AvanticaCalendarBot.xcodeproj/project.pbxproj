@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		45455C602123873D00CBEEF3 /* MessageBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45455C5F2123873D00CBEEF3 /* MessageBoxViewController.swift */; };
+		45859E622127296400D77FE0 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45859E612127296400D77FE0 /* MessageViewController.swift */; };
 		6FC03CF0D43547A57F5EEC18 /* Pods_O365_iOS_Microsoft_Graph_Connect_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F41FDC19FE5DAA3F12A713 /* Pods_O365_iOS_Microsoft_Graph_Connect_Swift.framework */; };
 		942EFA925337743CD912EA9C /* Pods_AvanticaCalendarBot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32941B60F5CCB03FD4D99BB1 /* Pods_AvanticaCalendarBot.framework */; };
 		96097C361C5977BB00332CBF /* EmailPostContent.json in Resources */ = {isa = PBXBuildFile; fileRef = 96097C341C5977BB00332CBF /* EmailPostContent.json */; };
@@ -30,6 +31,7 @@
 		11E9E66857EE2B91B0F80EE8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		32941B60F5CCB03FD4D99BB1 /* Pods_AvanticaCalendarBot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AvanticaCalendarBot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45455C5F2123873D00CBEEF3 /* MessageBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBoxViewController.swift; sourceTree = "<group>"; };
+		45859E612127296400D77FE0 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		45A7C473212247D1006F39A1 /* AvanticaCalendarBot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = AvanticaCalendarBot.entitlements; path = AvanticaCalendarBot/AvanticaCalendarBot.entitlements; sourceTree = "<group>"; };
 		96097C351C5977BB00332CBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Base; path = Base.lproj/EmailPostContent.json; sourceTree = "<group>"; };
 		96097C381C59783000332CBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = Base.lproj/EmailBody.html; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				969D30041C57F5A6007E9DB0 /* AuthenticationConstants.swift */,
 				969D30061C5833F4007E9DB0 /* ConnectViewController.swift */,
 				45455C5F2123873D00CBEEF3 /* MessageBoxViewController.swift */,
+				45859E612127296400D77FE0 /* MessageViewController.swift */,
 			);
 			name = "O365-iOS-Microsoft-Graph-Connect-Swift";
 			path = AvanticaCalendarBot;
@@ -241,12 +244,16 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-AvanticaCalendarBot/Pods-AvanticaCalendarBot-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/ApiAI/ApiAI.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ApiAI.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,6 +286,7 @@
 				CFB93F011F38E5EA00111610 /* AuthenticationClass.swift in Sources */,
 				969D2FE81C57EE48007E9DB0 /* AppDelegate.swift in Sources */,
 				969D30051C57F5A6007E9DB0 /* AuthenticationConstants.swift in Sources */,
+				45859E622127296400D77FE0 /* MessageViewController.swift in Sources */,
 				969D30071C5833F4007E9DB0 /* ConnectViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

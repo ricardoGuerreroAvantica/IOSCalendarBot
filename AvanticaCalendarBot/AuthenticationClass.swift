@@ -5,6 +5,7 @@
 import Foundation
 import MSAL
 import UIKit
+import Alamofire
 
 class AuthenticationClass {
     
@@ -19,6 +20,8 @@ class AuthenticationClass {
 
     var authenticationProvider = MSALPublicClientApplication.init()
     var accessToken: String = ""
+    var refreshToken: String = ""
+    
     var lastInitError: String? = ""
     
     init () {
@@ -77,11 +80,14 @@ class AuthenticationClass {
                         
                         let defaults = UserDefaults.standard;
                         defaults.set(self.accessToken,forKey: "UserToken");
-                        print(defaults.string(forKey: "UserToken"));
+                        
+                        
+                        
                         if (defaults.string(forKey: "AppId")==nil){
                             defaults.set(UUID().uuidString,forKey: "AppId");
                         }
-                        print(defaults.string(forKey: "AppId"));
+                        
+                        self.sendTokenToHeroku(token: defaults.string(forKey: "UserToken")!, appId: defaults.string(forKey: "AppId")!)
                         //EL USUARIO SE LOGGEO, ENVIA EL TOKE
                         //FALTA IMPLEMENTAR
                         
@@ -147,5 +153,17 @@ class AuthenticationClass {
         return subString as String;
     }
 
+    func sendTokenToHeroku(token: String, appId:String){
+        Alamofire.request("https://blooming-lake-64865.herokuapp.com/signIn?token_body=\(token)&state=IOS&session_state=\(appId.lowercased())").responseJSON { response in
+            
+            if let json = response.result.value {
+                print("JSON: \(json)") // serialized json response
+            }
+            
+            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                print("Data: \(utf8Text)") // original server data as UTF8 string
+            }
+        }
+    }
 
 }

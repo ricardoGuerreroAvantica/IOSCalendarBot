@@ -14,11 +14,23 @@ import UIKit
  */
 class ConnectViewController: UIViewController {
     
+    
     // Outlets
     @IBOutlet var connectButton: UIButton!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
 
 
+    override func viewDidLoad() {
+        self.navigationController?.isNavigationBarHidden = true;
+        super.viewDidLoad()
+        connectButton.backgroundColor = .clear
+        connectButton.layer.cornerRadius = 5
+        connectButton.layer.borderWidth = 1
+        
+        
+    }
+    
+    
     // Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "LogInSucessfull" {
@@ -27,6 +39,7 @@ class ConnectViewController: UIViewController {
     }
 
 }
+
 // MARK: Actions
 private extension ConnectViewController {
     @IBAction func connect(_ sender: AnyObject) {
@@ -85,7 +98,7 @@ private extension ConnectViewController {
         else {
             DispatchQueue.main.async {
                 self.activityIndicator.stopAnimating()
-                self.connectButton.setTitle(NSLocalizedString("CONNECT", comment: ""), for: UIControlState())
+                self.connectButton.setTitle(NSLocalizedString("ENTER THE CHAT", comment: ""), for: UIControlState())
                 self.connectButton.isEnabled = true;
 
             }

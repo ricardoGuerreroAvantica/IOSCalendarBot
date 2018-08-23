@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,33 +22,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rPH-Aq-OvZ">
-                                <rect key="frame" x="130.66666666666666" y="353" width="152.99999999999997" height="30"/>
-                                <state key="normal" title="Connect to Office 365">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aaL-de-myB">
+                                <rect key="frame" x="0.0" y="64" width="413" height="672"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rPH-Aq-OvZ">
+                                <rect key="frame" x="80" y="673" width="254" height="55"/>
+                                <color key="backgroundColor" red="0.84305417537689209" green="0.2245618999004364" blue="0.067955687642097473" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="ZgX-TY-9LQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="tintColor" red="0.3509848794" green="0.41508845059999999" blue="0.88028254530000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="ENTER THE CHAT">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="connect:" destination="EER-pl-Qyl" eventType="touchUpInside" id="UMW-a3-N4u"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ffk-iV-PbL">
-                                <rect key="frame" x="169" y="241.5" width="37" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avantica_logo" translatesAutoresizingMaskIntoConstraints="NO" id="wiO-OB-m9G">
+                                <rect key="frame" x="0.0" y="64" width="414" height="144"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="144" id="4Xd-RO-rD7"/>
+                                </constraints>
+                            </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ffk-iV-PbL">
+                                <rect key="frame" x="189" y="604" width="37" height="37"/>
                                 <color key="color" red="0.2725624144077301" green="0.58256793022155762" blue="0.99852830171585083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7H-jF-tio">
-                                <rect key="frame" x="164" y="461" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="rPH-Aq-OvZ" secondAttribute="centerY" id="V0N-V3-maG"/>
-                            <constraint firstAttribute="centerX" secondItem="rPH-Aq-OvZ" secondAttribute="centerX" id="uVe-oB-9XO"/>
+                            <constraint firstItem="rPH-Aq-OvZ" firstAttribute="leading" secondItem="bjh-3P-mNL" secondAttribute="leadingMargin" constant="60" id="8Ln-P8-SWc"/>
+                            <constraint firstItem="wiO-OB-m9G" firstAttribute="centerX" secondItem="ffk-iV-PbL" secondAttribute="centerX" id="EYh-Mi-Kbv"/>
+                            <constraint firstItem="aaL-de-myB" firstAttribute="leading" secondItem="bjh-3P-mNL" secondAttribute="leading" id="F3K-Ar-DiW"/>
+                            <constraint firstItem="aaL-de-myB" firstAttribute="bottom" secondItem="kJJ-eU-XYD" secondAttribute="top" id="Kq2-S6-QZr"/>
+                            <constraint firstItem="aaL-de-myB" firstAttribute="top" secondItem="xhd-ZI-IgT" secondAttribute="bottom" id="M7H-Zf-Agk"/>
+                            <constraint firstItem="wiO-OB-m9G" firstAttribute="top" secondItem="aaL-de-myB" secondAttribute="top" id="Ogn-Lh-i5t"/>
+                            <constraint firstItem="rPH-Aq-OvZ" firstAttribute="centerX" secondItem="bjh-3P-mNL" secondAttribute="centerX" id="XcB-3F-jFB"/>
+                            <constraint firstItem="rPH-Aq-OvZ" firstAttribute="centerX" secondItem="aaL-de-myB" secondAttribute="centerX" id="YMM-pf-Pfb"/>
+                            <constraint firstItem="wiO-OB-m9G" firstAttribute="leading" secondItem="aaL-de-myB" secondAttribute="leading" id="buD-im-ICd"/>
+                            <constraint firstItem="rPH-Aq-OvZ" firstAttribute="top" secondItem="ffk-iV-PbL" secondAttribute="bottom" constant="32" id="c3w-Y3-Lrb"/>
+                            <constraint firstItem="ffk-iV-PbL" firstAttribute="centerX" secondItem="rPH-Aq-OvZ" secondAttribute="centerX" id="rNN-SC-9Me"/>
+                            <constraint firstItem="kJJ-eU-XYD" firstAttribute="top" secondItem="rPH-Aq-OvZ" secondAttribute="bottom" constant="8" symbolic="YES" id="zOr-uH-UgE"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Avantica Calendar Bot Connect" id="GsL-UA-k9u">
+                    <navigationItem key="navigationItem" title="Avantica Calendar Bot Connect" largeTitleDisplayMode="never" id="GsL-UA-k9u">
                         <barButtonItem key="rightBarButtonItem" title="Disconnect" id="bLc-Iq-hXP">
                             <connections>
                                 <action selector="disconnect:" destination="EER-pl-Qyl" id="kKL-5X-xet"/>
@@ -57,93 +78,39 @@
                     <connections>
                         <outlet property="activityIndicator" destination="ffk-iV-PbL" id="Ym4-so-CX4"/>
                         <outlet property="connectButton" destination="rPH-Aq-OvZ" id="Nzr-VV-eBU"/>
-                        <segue destination="VCN-Rg-8RT" kind="push" identifier="LogInSucessfull" id="vNb-81-P4b"/>
+                        <segue destination="yz6-PF-eAc" kind="push" identifier="LogInSucessfull" id="879-aK-VtE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Eg-32-iPU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4719" y="-2035"/>
+            <point key="canvasLocation" x="-4720.289855072464" y="-2035.5978260869567"/>
         </scene>
-        <!--Message Box View Controller-->
-        <scene sceneID="qgo-m5-pg7">
+        <!--Calendar Bot-->
+        <scene sceneID="l7b-OG-8Ei">
             <objects>
-                <viewController id="VCN-Rg-8RT" customClass="MessageBoxViewController" customModule="AvanticaCalendarBot" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="yz6-PF-eAc" customClass="MessageViewController" customModule="AvanticaCalendarBot" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="1Ga-8a-DD6"/>
-                        <viewControllerLayoutGuide type="bottom" id="Chd-TO-OoV"/>
+                        <viewControllerLayoutGuide type="top" id="i3x-WK-85I"/>
+                        <viewControllerLayoutGuide type="bottom" id="VXs-wK-czP"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="SDv-b6-VY3">
+                    <view key="view" contentMode="scaleToFill" id="2xb-L5-yWZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AVANTICA CALENDAR BOT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfB-Pq-DBq">
-                                <rect key="frame" x="0.0" y="64" width="414" height="54"/>
-                                <color key="backgroundColor" red="0.87840025906735753" green="0.87840025906735753" blue="0.87840025906735753" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zD7-6E-TfK">
-                                <rect key="frame" x="323" y="201" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TeS-5p-mEA">
-                                <rect key="frame" x="0.0" y="126" width="414" height="560"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="560" id="d3R-Cr-Vqv"/>
-                                </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g9J-fb-bfs">
-                                <rect key="frame" x="0.0" y="706" width="326" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfK-XN-v8n">
-                                <rect key="frame" x="334" y="706" width="80" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="rLU-Ag-ESo"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="SEND"/>
-                                <connections>
-                                    <action selector="sendMessage:" destination="VCN-Rg-8RT" eventType="touchUpInside" id="g3R-WW-zyv"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="g9J-fb-bfs" firstAttribute="top" secondItem="mfK-XN-v8n" secondAttribute="top" id="32X-zf-ap9"/>
-                            <constraint firstItem="g9J-fb-bfs" firstAttribute="top" secondItem="TeS-5p-mEA" secondAttribute="bottom" constant="20" id="9bB-rZ-twP"/>
-                            <constraint firstItem="TeS-5p-mEA" firstAttribute="top" secondItem="SDv-b6-VY3" secondAttribute="top" constant="126" id="FKk-hT-zWL"/>
-                            <constraint firstItem="mfK-XN-v8n" firstAttribute="leading" secondItem="g9J-fb-bfs" secondAttribute="trailing" constant="8" symbolic="YES" id="Fpe-pU-tN8"/>
-                            <constraint firstItem="mfK-XN-v8n" firstAttribute="trailing" secondItem="TeS-5p-mEA" secondAttribute="trailing" id="K0C-mj-eYK"/>
-                            <constraint firstItem="TeS-5p-mEA" firstAttribute="leading" secondItem="SDv-b6-VY3" secondAttribute="leading" id="PFV-By-HKN"/>
-                            <constraint firstItem="lfB-Pq-DBq" firstAttribute="top" secondItem="1Ga-8a-DD6" secondAttribute="bottom" id="SLs-1S-78G"/>
-                            <constraint firstAttribute="trailing" secondItem="TeS-5p-mEA" secondAttribute="trailing" id="TLh-uL-6J3"/>
-                            <constraint firstItem="g9J-fb-bfs" firstAttribute="leading" secondItem="TeS-5p-mEA" secondAttribute="leading" id="XFr-qO-i4g"/>
-                            <constraint firstItem="lfB-Pq-DBq" firstAttribute="trailing" secondItem="TeS-5p-mEA" secondAttribute="trailing" id="g2H-5P-l1Y"/>
-                            <constraint firstItem="lfB-Pq-DBq" firstAttribute="leading" secondItem="TeS-5p-mEA" secondAttribute="leading" id="m7m-jA-LZN"/>
-                            <constraint firstItem="TeS-5p-mEA" firstAttribute="top" secondItem="lfB-Pq-DBq" secondAttribute="bottom" constant="8" symbolic="YES" id="sYb-EP-CgI"/>
-                            <constraint firstItem="mfK-XN-v8n" firstAttribute="bottom" secondItem="Chd-TO-OoV" secondAttribute="top" id="ujV-Cb-6kv"/>
-                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="9zD-vG-fqC"/>
-                    <connections>
-                        <outlet property="chipResponse" destination="TeS-5p-mEA" id="kwm-PR-gFM"/>
-                        <outlet property="messageField" destination="g9J-fb-bfs" id="3Yu-lz-6RD"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Calendar Bot" largeTitleDisplayMode="never" id="QPd-rJ-N4A" userLabel="Log out">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Mll-xC-qo1">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Jqr-Yg-DMl">
+                                <rect key="frame" x="302" y="7" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Log out"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Td4-oC-1dl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Irh-ZB-EfF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3853.6231884057975" y="-2035.5978260869567"/>
+            <point key="canvasLocation" x="-3901" y="-2035"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rss-wV-nq7">
@@ -164,4 +131,8 @@
             <point key="canvasLocation" x="-5408" y="-2034"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Avantica_logo" width="651" height="245"/>
+        <image name="Background" width="509" height="707"/>
+    </resources>
 </document>

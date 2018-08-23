@@ -5,5 +5,6 @@ target 'AvanticaCalendarBot' do
     pod "PromiseKit", "~> 4.5.2"
     pod 'Alamofire', '~> 4.7'
     pod 'ApiAI'
+    pod 'JSQMessagesViewController'
 end
 
