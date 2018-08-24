@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		45455C602123873D00CBEEF3 /* MessageBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45455C5F2123873D00CBEEF3 /* MessageBoxViewController.swift */; };
 		45859E622127296400D77FE0 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45859E612127296400D77FE0 /* MessageViewController.swift */; };
-		6FC03CF0D43547A57F5EEC18 /* Pods_O365_iOS_Microsoft_Graph_Connect_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F41FDC19FE5DAA3F12A713 /* Pods_O365_iOS_Microsoft_Graph_Connect_Swift.framework */; };
-		942EFA925337743CD912EA9C /* Pods_AvanticaCalendarBot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32941B60F5CCB03FD4D99BB1 /* Pods_AvanticaCalendarBot.framework */; };
 		96097C361C5977BB00332CBF /* EmailPostContent.json in Resources */ = {isa = PBXBuildFile; fileRef = 96097C341C5977BB00332CBF /* EmailPostContent.json */; };
 		96097C391C59783000332CBF /* EmailBody.html in Resources */ = {isa = PBXBuildFile; fileRef = 96097C371C59783000332CBF /* EmailBody.html */; };
 		969D2FE81C57EE48007E9DB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969D2FE71C57EE48007E9DB0 /* AppDelegate.swift */; };
@@ -22,14 +20,9 @@
 		CF29C7901F338AAE00C6F07C /* MSAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF29C78F1F338AAE00C6F07C /* MSAL.framework */; };
 		CFB93F011F38E5EA00111610 /* AuthenticationClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB93F001F38E5EA00111610 /* AuthenticationClass.swift */; };
 		CFCC68DC1FAD1B62007A0CBD /* CreateSharingLink.json in Resources */ = {isa = PBXBuildFile; fileRef = CFCC68DB1FAD1B61007A0CBD /* CreateSharingLink.json */; };
-		CFDA99F41F95653C00927E07 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFDA99F51F95653C00927E07 /* PromiseKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		01ADB592A48B3BDEB910F2FA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		09F41FDC19FE5DAA3F12A713 /* Pods_O365_iOS_Microsoft_Graph_Connect_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_O365_iOS_Microsoft_Graph_Connect_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		11E9E66857EE2B91B0F80EE8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		32941B60F5CCB03FD4D99BB1 /* Pods_AvanticaCalendarBot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AvanticaCalendarBot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45455C5F2123873D00CBEEF3 /* MessageBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBoxViewController.swift; sourceTree = "<group>"; };
 		45859E612127296400D77FE0 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		45A7C473212247D1006F39A1 /* AvanticaCalendarBot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = AvanticaCalendarBot.entitlements; path = AvanticaCalendarBot/AvanticaCalendarBot.entitlements; sourceTree = "<group>"; };
@@ -43,14 +36,10 @@
 		969D2FFC1C57EEC4007E9DB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		969D30041C57F5A6007E9DB0 /* AuthenticationConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationConstants.swift; sourceTree = "<group>"; };
 		969D30061C5833F4007E9DB0 /* ConnectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
-		A192148D10F2B8AAE0AF4785 /* Pods-O365-iOS-Microsoft-Graph-Connect-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-O365-iOS-Microsoft-Graph-Connect-Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-O365-iOS-Microsoft-Graph-Connect-Swift/Pods-O365-iOS-Microsoft-Graph-Connect-Swift.debug.xcconfig"; sourceTree = "<group>"; };
-		A9894CAE9AB623E1A48C2400 /* Pods-O365-iOS-Microsoft-Graph-Connect-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-O365-iOS-Microsoft-Graph-Connect-Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-O365-iOS-Microsoft-Graph-Connect-Swift/Pods-O365-iOS-Microsoft-Graph-Connect-Swift.release.xcconfig"; sourceTree = "<group>"; };
-		BAE73B453ABE65548E08A939 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF29C78F1F338AAE00C6F07C /* MSAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MSAL.framework; path = Carthage/Build/iOS/MSAL.framework; sourceTree = "<group>"; };
 		CFB93F001F38E5EA00111610 /* AuthenticationClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationClass.swift; sourceTree = "<group>"; };
 		CFC558E6208E468B002E16E9 /* O365-iOS-Microsoft-Graph-Connect-Swift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "O365-iOS-Microsoft-Graph-Connect-Swift.entitlements"; sourceTree = "<group>"; };
 		CFCC68DB1FAD1B61007A0CBD /* CreateSharingLink.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CreateSharingLink.json; sourceTree = "<group>"; };
-		CFDA99F51F95653C00927E07 /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6E1E46A0CB0B50A2E5F71D9 /* Pods-AvanticaCalendarBot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvanticaCalendarBot.release.xcconfig"; path = "Pods/Target Support Files/Pods-AvanticaCalendarBot/Pods-AvanticaCalendarBot.release.xcconfig"; sourceTree = "<group>"; };
 		F76103DE6B52CDBA5DBF891A /* Pods-AvanticaCalendarBot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvanticaCalendarBot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AvanticaCalendarBot/Pods-AvanticaCalendarBot.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -60,10 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFDA99F41F95653C00927E07 /* PromiseKit.framework in Frameworks */,
 				CF29C7901F338AAE00C6F07C /* MSAL.framework in Frameworks */,
-				6FC03CF0D43547A57F5EEC18 /* Pods_O365_iOS_Microsoft_Graph_Connect_Swift.framework in Frameworks */,
-				942EFA925337743CD912EA9C /* Pods_AvanticaCalendarBot.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,11 +59,7 @@
 		1A89F68346D3FAB5CF55AC1B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CFDA99F51F95653C00927E07 /* PromiseKit.framework */,
 				CF29C78F1F338AAE00C6F07C /* MSAL.framework */,
-				BAE73B453ABE65548E08A939 /* libPods.a */,
-				09F41FDC19FE5DAA3F12A713 /* Pods_O365_iOS_Microsoft_Graph_Connect_Swift.framework */,
-				32941B60F5CCB03FD4D99BB1 /* Pods_AvanticaCalendarBot.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -86,7 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				45A7C473212247D1006F39A1 /* AvanticaCalendarBot.entitlements */,
-				969D2FE61C57EE48007E9DB0 /* O365-iOS-Microsoft-Graph-Connect-Swift */,
+				969D2FE61C57EE48007E9DB0 /* AvanticaCalendarBot */,
 				969D2FE51C57EE48007E9DB0 /* Products */,
 				AE23A47DCA478F8BF668FC5E /* Pods */,
 				1A89F68346D3FAB5CF55AC1B /* Frameworks */,
@@ -101,7 +83,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		969D2FE61C57EE48007E9DB0 /* O365-iOS-Microsoft-Graph-Connect-Swift */ = {
+		969D2FE61C57EE48007E9DB0 /* AvanticaCalendarBot */ = {
 			isa = PBXGroup;
 			children = (
 				CFC558E6208E468B002E16E9 /* O365-iOS-Microsoft-Graph-Connect-Swift.entitlements */,
@@ -119,17 +101,12 @@
 				45455C5F2123873D00CBEEF3 /* MessageBoxViewController.swift */,
 				45859E612127296400D77FE0 /* MessageViewController.swift */,
 			);
-			name = "O365-iOS-Microsoft-Graph-Connect-Swift";
 			path = AvanticaCalendarBot;
 			sourceTree = "<group>";
 		};
 		AE23A47DCA478F8BF668FC5E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				11E9E66857EE2B91B0F80EE8 /* Pods.debug.xcconfig */,
-				01ADB592A48B3BDEB910F2FA /* Pods.release.xcconfig */,
-				A192148D10F2B8AAE0AF4785 /* Pods-O365-iOS-Microsoft-Graph-Connect-Swift.debug.xcconfig */,
-				A9894CAE9AB623E1A48C2400 /* Pods-O365-iOS-Microsoft-Graph-Connect-Swift.release.xcconfig */,
 				F76103DE6B52CDBA5DBF891A /* Pods-AvanticaCalendarBot.debug.xcconfig */,
 				E6E1E46A0CB0B50A2E5F71D9 /* Pods-AvanticaCalendarBot.release.xcconfig */,
 			);
@@ -175,6 +152,9 @@
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.Keychain = {
 								enabled = 1;
 							};
@@ -432,7 +412,7 @@
 				);
 				INFOPLIST_FILE = AvanticaCalendarBot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.microsoft.O365-iOS-Microsoft-Graph-Connect-Swift-REST";
+				PRODUCT_BUNDLE_IDENTIFIER = com.avantica.mobile.bot.calendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = AvanticaCalendarBot/AvanticaCalendarBot.h;
@@ -456,7 +436,7 @@
 				);
 				INFOPLIST_FILE = AvanticaCalendarBot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.microsoft.O365-iOS-Microsoft-Graph-Connect-Swift-REST";
+				PRODUCT_BUNDLE_IDENTIFIER = com.avantica.mobile.bot.calendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = AvanticaCalendarBot/AvanticaCalendarBot.h;

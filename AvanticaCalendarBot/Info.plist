@@ -18,6 +18,20 @@
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>msalc93a93c8-e0bd-4066-8550-845bf844bea3</string>
+				<string>auth</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
@@ -43,19 +57,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>CFBundleURLTypes</key>
-    <array>
-        <dict>
-            <key>CFBundleTypeRole</key>
-            <string>Editor</string>
-            <key>CFBundleURLName</key>
-            <string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
-            <key>CFBundleURLSchemes</key>
-            <array>
-                <string>msalc93a93c8-e0bd-4066-8550-845bf844bea3</string>
-                <string>auth</string>
-            </array>
-        </dict>
-    </array>
 </dict>
 </plist>
