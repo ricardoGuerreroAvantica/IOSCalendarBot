@@ -79,11 +79,31 @@
                         <outlet property="activityIndicator" destination="ffk-iV-PbL" id="Ym4-so-CX4"/>
                         <outlet property="connectButton" destination="rPH-Aq-OvZ" id="Nzr-VV-eBU"/>
                         <segue destination="yz6-PF-eAc" kind="push" identifier="LogInSucessfull" id="879-aK-VtE"/>
+                        <segue destination="UA1-0G-ihF" kind="push" identifier="showMessageView" id="if3-gK-XtR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Eg-32-iPU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-4720.289855072464" y="-2035.5978260869567"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="E5B-h5-wgf">
+            <objects>
+                <viewController id="UA1-0G-ihF" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UKn-uV-6Ag"/>
+                        <viewControllerLayoutGuide type="bottom" id="NSY-rt-dk8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="m4O-eq-k8N" customClass="I">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bRC-r2-Faw"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ar9-ss-kgY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4720" y="-1174"/>
         </scene>
         <!--Calendar Bot-->
         <scene sceneID="l7b-OG-8Ei">

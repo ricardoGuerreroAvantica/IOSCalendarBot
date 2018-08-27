@@ -82,10 +82,16 @@ class AuthenticationClass {
                         defaults.set(self.accessToken,forKey: "UserToken");
                         
                         
+                        let userDefaultsValue = UserDefaults(suiteName: "group.net.avantica.bot")
+                        userDefaultsValue?.set(defaults.string(forKey: "AppId"),forKey:"SiriAppId")
+                        userDefaultsValue?.synchronize()
+
+                        print(userDefaultsValue?.string(forKey: "SiriAppId"))
                         
                         if (defaults.string(forKey: "AppId")==nil){
                             defaults.set(UUID().uuidString,forKey: "AppId");
                         }
+                        
                         
                         self.sendTokenToHeroku(token: defaults.string(forKey: "UserToken")!, appId: defaults.string(forKey: "AppId")!)
                         //EL USUARIO SE LOGGEO, ENVIA EL TOKE

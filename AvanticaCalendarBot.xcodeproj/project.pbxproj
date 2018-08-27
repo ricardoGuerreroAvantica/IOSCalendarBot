@@ -7,8 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08B32BA3F4220F6E7BD53C78 /* Pods_AvanticaCalendarBotExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFE2B3FA2702EBBB65B72E8C /* Pods_AvanticaCalendarBotExtension.framework */; };
+		09D2C3A474542DC0570754B6 /* Pods_AvanticaCalendarBot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A6025904F4D0576BAF24131 /* Pods_AvanticaCalendarBot.framework */; };
+		452387E021307246001D9778 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452387DF21307246001D9778 /* IntentHandler.swift */; };
+		452387E821307247001D9778 /* IntentsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452387E721307247001D9778 /* IntentsUI.framework */; };
+		452387EB21307247001D9778 /* IntentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452387EA21307247001D9778 /* IntentViewController.swift */; };
+		452387EE21307247001D9778 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 452387EC21307247001D9778 /* MainInterface.storyboard */; };
+		452387F221307247001D9778 /* AvanticaCalendarBotExtensionUI.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 452387E621307247001D9778 /* AvanticaCalendarBotExtensionUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		452387F521307247001D9778 /* AvanticaCalendarBotExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 452387DD21307246001D9778 /* AvanticaCalendarBotExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		45455C602123873D00CBEEF3 /* MessageBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45455C5F2123873D00CBEEF3 /* MessageBoxViewController.swift */; };
+		45648B7321345BE000533995 /* ChatLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45648B7221345BE000533995 /* ChatLogViewController.swift */; };
 		45859E622127296400D77FE0 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45859E612127296400D77FE0 /* MessageViewController.swift */; };
+		4BB9618E895069A4CB501E17 /* Pods_AvanticaCalendarBotExtensionUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1E60B83B67F5F4F5FE2470A /* Pods_AvanticaCalendarBotExtensionUI.framework */; };
 		96097C361C5977BB00332CBF /* EmailPostContent.json in Resources */ = {isa = PBXBuildFile; fileRef = 96097C341C5977BB00332CBF /* EmailPostContent.json */; };
 		96097C391C59783000332CBF /* EmailBody.html in Resources */ = {isa = PBXBuildFile; fileRef = 96097C371C59783000332CBF /* EmailBody.html */; };
 		969D2FE81C57EE48007E9DB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969D2FE71C57EE48007E9DB0 /* AppDelegate.swift */; };
@@ -22,10 +32,57 @@
 		CFCC68DC1FAD1B62007A0CBD /* CreateSharingLink.json in Resources */ = {isa = PBXBuildFile; fileRef = CFCC68DB1FAD1B61007A0CBD /* CreateSharingLink.json */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		452387F021307247001D9778 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 969D2FDC1C57EE48007E9DB0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 452387E521307247001D9778;
+			remoteInfo = AvanticaCalendarBotExtensionUI;
+		};
+		452387F321307247001D9778 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 969D2FDC1C57EE48007E9DB0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 452387DC21307246001D9778;
+			remoteInfo = AvanticaCalendarBotExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		452387FC21307247001D9778 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				452387F221307247001D9778 /* AvanticaCalendarBotExtensionUI.appex in Embed App Extensions */,
+				452387F521307247001D9778 /* AvanticaCalendarBotExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		2A6025904F4D0576BAF24131 /* Pods_AvanticaCalendarBot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AvanticaCalendarBot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		452387DD21307246001D9778 /* AvanticaCalendarBotExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AvanticaCalendarBotExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		452387DF21307246001D9778 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		452387E121307246001D9778 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		452387E621307247001D9778 /* AvanticaCalendarBotExtensionUI.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AvanticaCalendarBotExtensionUI.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		452387E721307247001D9778 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
+		452387EA21307247001D9778 /* IntentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentViewController.swift; sourceTree = "<group>"; };
+		452387ED21307247001D9778 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		452387EF21307247001D9778 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		452387FD21307251001D9778 /* AvanticaCalendarBotExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AvanticaCalendarBotExtension.entitlements; sourceTree = "<group>"; };
+		452387FE2130725C001D9778 /* AvanticaCalendarBotExtensionUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AvanticaCalendarBotExtensionUI.entitlements; sourceTree = "<group>"; };
 		45455C5F2123873D00CBEEF3 /* MessageBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBoxViewController.swift; sourceTree = "<group>"; };
+		45648B702130B29900533995 /* ApiAI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApiAI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45648B7221345BE000533995 /* ChatLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogViewController.swift; sourceTree = "<group>"; };
 		45859E612127296400D77FE0 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		45A7C473212247D1006F39A1 /* AvanticaCalendarBot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = AvanticaCalendarBot.entitlements; path = AvanticaCalendarBot/AvanticaCalendarBot.entitlements; sourceTree = "<group>"; };
+		5B35876B4F1A70A38C82CE6E /* Pods-AvanticaCalendarBotExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvanticaCalendarBotExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AvanticaCalendarBotExtension/Pods-AvanticaCalendarBotExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		64FDDB5353ED3C44279708CF /* Pods-AvanticaCalendarBotExtensionUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvanticaCalendarBotExtensionUI.release.xcconfig"; path = "Pods/Target Support Files/Pods-AvanticaCalendarBotExtensionUI/Pods-AvanticaCalendarBotExtensionUI.release.xcconfig"; sourceTree = "<group>"; };
 		96097C351C5977BB00332CBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Base; path = Base.lproj/EmailPostContent.json; sourceTree = "<group>"; };
 		96097C381C59783000332CBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = Base.lproj/EmailBody.html; sourceTree = "<group>"; };
 		969D2FE41C57EE48007E9DB0 /* AvanticaCalendarBot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AvanticaCalendarBot.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,20 +93,42 @@
 		969D2FFC1C57EEC4007E9DB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		969D30041C57F5A6007E9DB0 /* AuthenticationConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationConstants.swift; sourceTree = "<group>"; };
 		969D30061C5833F4007E9DB0 /* ConnectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
+		9E2492865CBFB1C0A2117D6A /* Pods-AvanticaCalendarBotExtensionUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvanticaCalendarBotExtensionUI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AvanticaCalendarBotExtensionUI/Pods-AvanticaCalendarBotExtensionUI.debug.xcconfig"; sourceTree = "<group>"; };
+		AFE2B3FA2702EBBB65B72E8C /* Pods_AvanticaCalendarBotExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AvanticaCalendarBotExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCCA1B3123986E728176CDA0 /* Pods-AvanticaCalendarBotExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvanticaCalendarBotExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-AvanticaCalendarBotExtension/Pods-AvanticaCalendarBotExtension.release.xcconfig"; sourceTree = "<group>"; };
 		CF29C78F1F338AAE00C6F07C /* MSAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MSAL.framework; path = Carthage/Build/iOS/MSAL.framework; sourceTree = "<group>"; };
 		CFB93F001F38E5EA00111610 /* AuthenticationClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationClass.swift; sourceTree = "<group>"; };
 		CFC558E6208E468B002E16E9 /* O365-iOS-Microsoft-Graph-Connect-Swift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "O365-iOS-Microsoft-Graph-Connect-Swift.entitlements"; sourceTree = "<group>"; };
 		CFCC68DB1FAD1B61007A0CBD /* CreateSharingLink.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CreateSharingLink.json; sourceTree = "<group>"; };
 		E6E1E46A0CB0B50A2E5F71D9 /* Pods-AvanticaCalendarBot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvanticaCalendarBot.release.xcconfig"; path = "Pods/Target Support Files/Pods-AvanticaCalendarBot/Pods-AvanticaCalendarBot.release.xcconfig"; sourceTree = "<group>"; };
+		F1E60B83B67F5F4F5FE2470A /* Pods_AvanticaCalendarBotExtensionUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AvanticaCalendarBotExtensionUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F76103DE6B52CDBA5DBF891A /* Pods-AvanticaCalendarBot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvanticaCalendarBot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AvanticaCalendarBot/Pods-AvanticaCalendarBot.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		452387DA21307246001D9778 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08B32BA3F4220F6E7BD53C78 /* Pods_AvanticaCalendarBotExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		452387E321307247001D9778 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				452387E821307247001D9778 /* IntentsUI.framework in Frameworks */,
+				4BB9618E895069A4CB501E17 /* Pods_AvanticaCalendarBotExtensionUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		969D2FE11C57EE48007E9DB0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CF29C7901F338AAE00C6F07C /* MSAL.framework in Frameworks */,
+				09D2C3A474542DC0570754B6 /* Pods_AvanticaCalendarBot.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,9 +138,35 @@
 		1A89F68346D3FAB5CF55AC1B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				45648B702130B29900533995 /* ApiAI.framework */,
 				CF29C78F1F338AAE00C6F07C /* MSAL.framework */,
+				452387E721307247001D9778 /* IntentsUI.framework */,
+				2A6025904F4D0576BAF24131 /* Pods_AvanticaCalendarBot.framework */,
+				AFE2B3FA2702EBBB65B72E8C /* Pods_AvanticaCalendarBotExtension.framework */,
+				F1E60B83B67F5F4F5FE2470A /* Pods_AvanticaCalendarBotExtensionUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		452387DE21307246001D9778 /* AvanticaCalendarBotExtension */ = {
+			isa = PBXGroup;
+			children = (
+				452387FD21307251001D9778 /* AvanticaCalendarBotExtension.entitlements */,
+				452387DF21307246001D9778 /* IntentHandler.swift */,
+				452387E121307246001D9778 /* Info.plist */,
+			);
+			path = AvanticaCalendarBotExtension;
+			sourceTree = "<group>";
+		};
+		452387E921307247001D9778 /* AvanticaCalendarBotExtensionUI */ = {
+			isa = PBXGroup;
+			children = (
+				452387FE2130725C001D9778 /* AvanticaCalendarBotExtensionUI.entitlements */,
+				452387EA21307247001D9778 /* IntentViewController.swift */,
+				452387EC21307247001D9778 /* MainInterface.storyboard */,
+				452387EF21307247001D9778 /* Info.plist */,
+			);
+			path = AvanticaCalendarBotExtensionUI;
 			sourceTree = "<group>";
 		};
 		969D2FDB1C57EE48007E9DB0 = {
@@ -69,6 +174,8 @@
 			children = (
 				45A7C473212247D1006F39A1 /* AvanticaCalendarBot.entitlements */,
 				969D2FE61C57EE48007E9DB0 /* AvanticaCalendarBot */,
+				452387DE21307246001D9778 /* AvanticaCalendarBotExtension */,
+				452387E921307247001D9778 /* AvanticaCalendarBotExtensionUI */,
 				969D2FE51C57EE48007E9DB0 /* Products */,
 				AE23A47DCA478F8BF668FC5E /* Pods */,
 				1A89F68346D3FAB5CF55AC1B /* Frameworks */,
@@ -79,6 +186,8 @@
 			isa = PBXGroup;
 			children = (
 				969D2FE41C57EE48007E9DB0 /* AvanticaCalendarBot.app */,
+				452387DD21307246001D9778 /* AvanticaCalendarBotExtension.appex */,
+				452387E621307247001D9778 /* AvanticaCalendarBotExtensionUI.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,6 +209,7 @@
 				969D30061C5833F4007E9DB0 /* ConnectViewController.swift */,
 				45455C5F2123873D00CBEEF3 /* MessageBoxViewController.swift */,
 				45859E612127296400D77FE0 /* MessageViewController.swift */,
+				45648B7221345BE000533995 /* ChatLogViewController.swift */,
 			);
 			path = AvanticaCalendarBot;
 			sourceTree = "<group>";
@@ -109,6 +219,10 @@
 			children = (
 				F76103DE6B52CDBA5DBF891A /* Pods-AvanticaCalendarBot.debug.xcconfig */,
 				E6E1E46A0CB0B50A2E5F71D9 /* Pods-AvanticaCalendarBot.release.xcconfig */,
+				5B35876B4F1A70A38C82CE6E /* Pods-AvanticaCalendarBotExtension.debug.xcconfig */,
+				BCCA1B3123986E728176CDA0 /* Pods-AvanticaCalendarBotExtension.release.xcconfig */,
+				9E2492865CBFB1C0A2117D6A /* Pods-AvanticaCalendarBotExtensionUI.debug.xcconfig */,
+				64FDDB5353ED3C44279708CF /* Pods-AvanticaCalendarBotExtensionUI.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -116,6 +230,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		452387DC21307246001D9778 /* AvanticaCalendarBotExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 452387F921307247001D9778 /* Build configuration list for PBXNativeTarget "AvanticaCalendarBotExtension" */;
+			buildPhases = (
+				00B0F79D4F22375564B2E2DB /* [CP] Check Pods Manifest.lock */,
+				452387D921307246001D9778 /* Sources */,
+				452387DA21307246001D9778 /* Frameworks */,
+				452387DB21307246001D9778 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AvanticaCalendarBotExtension;
+			productName = AvanticaCalendarBotExtension;
+			productReference = 452387DD21307246001D9778 /* AvanticaCalendarBotExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		452387E521307247001D9778 /* AvanticaCalendarBotExtensionUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 452387F621307247001D9778 /* Build configuration list for PBXNativeTarget "AvanticaCalendarBotExtensionUI" */;
+			buildPhases = (
+				0794062900BA39018219ABD8 /* [CP] Check Pods Manifest.lock */,
+				452387E221307247001D9778 /* Sources */,
+				452387E321307247001D9778 /* Frameworks */,
+				452387E421307247001D9778 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AvanticaCalendarBotExtensionUI;
+			productName = AvanticaCalendarBotExtensionUI;
+			productReference = 452387E621307247001D9778 /* AvanticaCalendarBotExtensionUI.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		969D2FE31C57EE48007E9DB0 /* AvanticaCalendarBot */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 969D2FF61C57EE48007E9DB0 /* Build configuration list for PBXNativeTarget "AvanticaCalendarBot" */;
@@ -126,10 +276,13 @@
 				969D2FE21C57EE48007E9DB0 /* Resources */,
 				C60ECBA787FEC4F2DCEA02D2 /* [CP] Embed Pods Frameworks */,
 				CF29C7911F33CA1400C6F07C /* ShellScript */,
+				452387FC21307247001D9778 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				452387F121307247001D9778 /* PBXTargetDependency */,
+				452387F421307247001D9778 /* PBXTargetDependency */,
 			);
 			name = AvanticaCalendarBot;
 			productName = "O365-iOS-Microsoft-Graph-Connect-Swift";
@@ -142,10 +295,30 @@
 		969D2FDC1C57EE48007E9DB0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Jason Kim";
 				TargetAttributes = {
+					452387DC21307246001D9778 = {
+						CreatedOnToolsVersion = 9.4.1;
+						DevelopmentTeam = DLWB6ZX2PL;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					452387E521307247001D9778 = {
+						CreatedOnToolsVersion = 9.4.1;
+						DevelopmentTeam = DLWB6ZX2PL;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					969D2FE31C57EE48007E9DB0 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = DLWB6ZX2PL;
@@ -176,11 +349,28 @@
 			projectRoot = "";
 			targets = (
 				969D2FE31C57EE48007E9DB0 /* AvanticaCalendarBot */,
+				452387DC21307246001D9778 /* AvanticaCalendarBotExtension */,
+				452387E521307247001D9778 /* AvanticaCalendarBotExtensionUI */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		452387DB21307246001D9778 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		452387E421307247001D9778 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				452387EE21307247001D9778 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		969D2FE21C57EE48007E9DB0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -197,6 +387,42 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		00B0F79D4F22375564B2E2DB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AvanticaCalendarBotExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0794062900BA39018219ABD8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AvanticaCalendarBotExtensionUI-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8C104A31D62AECA4F7A908B2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -222,16 +448,16 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AvanticaCalendarBot/Pods-AvanticaCalendarBot-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/ApiAI/ApiAI.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ApiAI.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
@@ -258,6 +484,22 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		452387D921307246001D9778 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				452387E021307246001D9778 /* IntentHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		452387E221307247001D9778 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				452387EB21307247001D9778 /* IntentViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		969D2FE01C57EE48007E9DB0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -267,13 +509,35 @@
 				969D2FE81C57EE48007E9DB0 /* AppDelegate.swift in Sources */,
 				969D30051C57F5A6007E9DB0 /* AuthenticationConstants.swift in Sources */,
 				45859E622127296400D77FE0 /* MessageViewController.swift in Sources */,
+				45648B7321345BE000533995 /* ChatLogViewController.swift in Sources */,
 				969D30071C5833F4007E9DB0 /* ConnectViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		452387F121307247001D9778 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 452387E521307247001D9778 /* AvanticaCalendarBotExtensionUI */;
+			targetProxy = 452387F021307247001D9778 /* PBXContainerItemProxy */;
+		};
+		452387F421307247001D9778 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 452387DC21307246001D9778 /* AvanticaCalendarBotExtension */;
+			targetProxy = 452387F321307247001D9778 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		452387EC21307247001D9778 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				452387ED21307247001D9778 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		96097C341C5977BB00332CBF /* EmailPostContent.json */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -309,6 +573,148 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		452387F721307247001D9778 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E2492865CBFB1C0A2117D6A /* Pods-AvanticaCalendarBotExtensionUI.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = AvanticaCalendarBotExtensionUI/AvanticaCalendarBotExtensionUI.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DLWB6ZX2PL;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = AvanticaCalendarBotExtensionUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.avantica.mobile.bot.calendar.AvanticaCalendarBotExtensionUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		452387F821307247001D9778 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64FDDB5353ED3C44279708CF /* Pods-AvanticaCalendarBotExtensionUI.release.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = AvanticaCalendarBotExtensionUI/AvanticaCalendarBotExtensionUI.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DLWB6ZX2PL;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = AvanticaCalendarBotExtensionUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.avantica.mobile.bot.calendar.AvanticaCalendarBotExtensionUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		452387FA21307247001D9778 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B35876B4F1A70A38C82CE6E /* Pods-AvanticaCalendarBotExtension.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = AvanticaCalendarBotExtension/AvanticaCalendarBotExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DLWB6ZX2PL;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = AvanticaCalendarBotExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.avantica.mobile.bot.calendar.AvanticaCalendarBotExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		452387FB21307247001D9778 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCCA1B3123986E728176CDA0 /* Pods-AvanticaCalendarBotExtension.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = AvanticaCalendarBotExtension/AvanticaCalendarBotExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DLWB6ZX2PL;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = AvanticaCalendarBotExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.avantica.mobile.bot.calendar.AvanticaCalendarBotExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		969D2FF41C57EE48007E9DB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -401,9 +807,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F76103DE6B52CDBA5DBF891A /* Pods-AvanticaCalendarBot.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = AvanticaCalendarBot/AvanticaCalendarBot.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = DLWB6ZX2PL;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -425,9 +833,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E6E1E46A0CB0B50A2E5F71D9 /* Pods-AvanticaCalendarBot.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = AvanticaCalendarBot/AvanticaCalendarBot.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = DLWB6ZX2PL;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -447,6 +857,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		452387F621307247001D9778 /* Build configuration list for PBXNativeTarget "AvanticaCalendarBotExtensionUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				452387F721307247001D9778 /* Debug */,
+				452387F821307247001D9778 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		452387F921307247001D9778 /* Build configuration list for PBXNativeTarget "AvanticaCalendarBotExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				452387FA21307247001D9778 /* Debug */,
+				452387FB21307247001D9778 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		969D2FDF1C57EE48007E9DB0 /* Build configuration list for PBXProject "AvanticaCalendarBot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
