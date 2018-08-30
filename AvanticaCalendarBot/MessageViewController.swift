@@ -37,7 +37,10 @@ class MessageViewController: JSQMessagesViewController, SFSpeechRecognizerDelega
     // Al the message of the chage
     var messages = [JSQMessage]();
     
-    
+    override func didPressAccessoryButton(_ sender: UIButton!) {
+        
+    }
+
     override func viewDidLoad(){
         super.viewDidLoad()
         
@@ -48,18 +51,18 @@ class MessageViewController: JSQMessagesViewController, SFSpeechRecognizerDelega
         self.messages = getMessages()
         
         let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(voicePress(press:)))
-        longPressGesture.minimumPressDuration = 1.3
+        longPressGesture.minimumPressDuration = 0.3
         voiceButton.addGestureRecognizer(longPressGesture)
         
         let height: Float = Float(inputToolbar.contentView.leftBarButtonContainerView.frame.size.height)
         var image = UIImage(named: "Microphone")
         voiceButton.setImage(image, for: .normal)
-        voiceButton.addTarget(self, action: #selector(self.buttonAction), for: .touchUpInside)
-        voiceButton.frame = CGRect(x: 0, y: 0, width: 50, height: 35)
-        
+
+        voiceButton.frame = CGRect(x: 10, y: 0, width: 50, height: 35)
+        inputToolbar.contentView.leftBarButtonItem.isHidden = true;
         inputToolbar.contentView.leftBarButtonItemWidth = 55
-        inputToolbar.contentView.leftBarButtonContainerView.addSubview(voiceButton)
-        inputToolbar.contentView.leftBarButtonItem.isHidden = true
+        inputToolbar.contentView.leftBarButtonContainerView.addSubview(voiceButton) 
+        
         
         //VOICE MESSAGE SETUP
         voiceButton.isEnabled = false
@@ -96,14 +99,34 @@ class MessageViewController: JSQMessagesViewController, SFSpeechRecognizerDelega
         
     }
     
+    func speechRecognizer(_ speechRecognizer: SFSpeechRecognizer, availabilityDidChange available: Bool) {
+        if available {
+            voiceButton.isEnabled = true
+        } else {
+            voiceButton.isEnabled = false
+        }
+    }
+
+    
+    override func viewDidAppear(_ animated: Bool) {
+        inputToolbar.contentView.leftBarButtonContainerView.bringSubview(toFront: voiceButton)
+    }
+    
     func voicePress(press:UILongPressGestureRecognizer){
+        if press.state == .began{
+            print("long Press began")
+            buttonAction()
+            voiceButton.backgroundColor = UIColor.gray
+        }
         if press.state == .ended{
-            print("long Press")
+            print("long Press ended")
+            voiceButton.backgroundColor = UIColor.clear
+            buttonAction()
         }
     }
     
-    func buttonAction(sender: UIButton!) {
-        print("Button tapped")
+    func buttonAction() {
+
         if audioEngine.isRunning {
             audioEngine.stop()
             recognitionRequest?.endAudio()
@@ -182,15 +205,7 @@ class MessageViewController: JSQMessagesViewController, SFSpeechRecognizerDelega
         print("Say something, I'm listening!")
         
     }
-    
-    func speechRecognizer(_ speechRecognizer: SFSpeechRecognizer, availabilityDidChange available: Bool) {
-        if available {
-            voiceButton.isEnabled = true
-        } else {
-            voiceButton.isEnabled = false
-        }
-    }
-    
+
     
     
 }
