@@ -20,14 +20,28 @@ class ConnectViewController: UIViewController {
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
 
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Hide the navigation bar on the this view controller
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Show the navigation bar on other view controllers
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     override func viewDidLoad() {
-        self.navigationController?.isNavigationBarHidden = true;
+        
         super.viewDidLoad()
         connectButton.backgroundColor = .clear
         connectButton.layer.cornerRadius = 5
         connectButton.layer.borderWidth = 1
-        
-        
+        self.navigationController?.navigationBar.isHidden = true
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
     
     
@@ -75,7 +89,13 @@ private extension ConnectViewController {
             else {
                 // run on main thread!!
                 DispatchQueue.main.async {
-                    self.performSegue(withIdentifier: "LogInSucessfull", sender: nil)
+                    let defaults = UserDefaults.standard
+                    let appId: String!
+                    appId = defaults.string(forKey: "AppId")
+                    if (appId != nil){
+                        self.performSegue(withIdentifier: "LogInSucessfull", sender: nil)
+                    }
+                    
                 }
                 
                 return true
@@ -98,7 +118,7 @@ private extension ConnectViewController {
         else {
             DispatchQueue.main.async {
                 self.activityIndicator.stopAnimating()
-                self.connectButton.setTitle(NSLocalizedString("ENTER THE CHAT", comment: ""), for: UIControlState())
+                self.connectButton.setTitle(NSLocalizedString("ENTER", comment: ""), for: UIControlState())
                 self.connectButton.isEnabled = true;
 
             }

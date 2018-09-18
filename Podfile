@@ -6,5 +6,6 @@ target 'AvanticaCalendarBot' do
     pod 'Alamofire', '~> 4.7'
     pod 'ApiAI'
     pod 'JSQMessagesViewController'
+    pod 'JGProgressHUD'
 end
 

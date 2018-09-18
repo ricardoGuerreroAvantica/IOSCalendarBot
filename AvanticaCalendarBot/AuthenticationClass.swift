@@ -75,6 +75,7 @@ class AuthenticationClass {
                 try authenticationProvider.acquireTokenSilent(forScopes: scopes, user: authenticationProvider.users().first) { (result, error) in
                     
                     if error == nil {
+                        
                         self.accessToken = (result?.accessToken)!
                         _ = completion(nil, self.accessToken);
                         
@@ -86,6 +87,7 @@ class AuthenticationClass {
                         if (defaults.string(forKey: "AppId")==nil){
                             defaults.set(UUID().uuidString,forKey: "AppId");
                         }
+                        print(defaults.string(forKey: "AppId"))
                         
                         self.sendTokenToHeroku(token: defaults.string(forKey: "UserToken")!, appId: defaults.string(forKey: "AppId")!)
                         //EL USUARIO SE LOGGEO, ENVIA EL TOKE
