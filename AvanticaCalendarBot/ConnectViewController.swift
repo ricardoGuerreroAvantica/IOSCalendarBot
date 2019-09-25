@@ -1,7 +1,3 @@
-/*
-* Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
-* See LICENSE in the project root for license information.
-*/
 
 import UIKit
 
@@ -14,17 +10,28 @@ import UIKit
  */
 class ConnectViewController: UIViewController {
     
+    let pageString = ["create new events", "check coworkers availability", "check your events"]
+    var timer : Timer?
     
     // Outlets
     @IBOutlet var connectButton: UIButton!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
 
-
+    @IBOutlet weak var pageController: UIPageControl!
+    
+    @IBOutlet weak var textLabelScroll: UILabel!
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(self.pageChanged), userInfo: nil, repeats: true)
         // Hide the navigation bar on the this view controller
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    
+    @IBAction func LogOutAction(_ sender: Any) {
+        AuthenticationClass.sharedInstance?.disconnect()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -37,12 +44,19 @@ class ConnectViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        connectButton.backgroundColor = .clear
+        
+        let pageCount : CGFloat = CGFloat(pageString.count)
+        pageController.addTarget(self, action: #selector(self.pageChanged), for: .valueChanged)
+        pageController.numberOfPages = Int(pageCount)
+        
+        
+        //connectButton.backgroundColor = .clear
         connectButton.layer.cornerRadius = 5
         connectButton.layer.borderWidth = 1
         self.navigationController?.navigationBar.isHidden = true
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
+    
     
     
     // Navigation
@@ -56,12 +70,32 @@ class ConnectViewController: UIViewController {
 
 // MARK: Actions
 private extension ConnectViewController {
+
     @IBAction func connect(_ sender: AnyObject) {
+        self.timer?.invalidate()
+        self.timer = nil
         authenticate()
+        
     }
     @IBAction func disconnect(_ sender: AnyObject) {
         AuthenticationClass.sharedInstance?.disconnect()
         self.navigationController?.popViewController(animated: true)
+    }
+}
+
+
+private extension ConnectViewController {
+
+    @objc func pageChanged() {
+        var pageNumber : Int
+        if(pageController.currentPage >= pageString.count-1){
+            pageNumber = 0
+        }
+        else{
+            pageNumber = pageController.currentPage + 1
+        }
+        pageController.currentPage = pageNumber;
+        textLabelScroll.text = pageString[pageNumber]
     }
 }
 
@@ -87,17 +121,27 @@ private extension ConnectViewController {
                 return false
             }
             else {
-                // run on main thread!!
-                DispatchQueue.main.async {
-                    let defaults = UserDefaults.standard
-                    let appId: String!
-                    appId = defaults.string(forKey: "AppId")
-                    if (appId != nil){
-                        self.performSegue(withIdentifier: "LogInSucessfull", sender: nil)
+                    // run on main thread!!
+                    DispatchQueue.main.async {
+                        
+                        let defaults = UserDefaults.standard;
+    //                    let token = (result?.accessToken)!
+    //                        defaults.set(token,forKey: "UserToken");
+                        print(accessToken)
+                        let appId: String!
+                        appId = defaults.string(forKey: "AppId")
+                        let logInStarted = defaults.string(forKey: "logInStarted")
+                        if(logInStarted == nil){
+                            defaults.set("On", forKey: "logInStarted")
+                            self.authenticate()
+                        }
+                        else{
+                            defaults.set(nil, forKey: "logInStarted")
+                            if (appId != nil){
+                                self.performSegue(withIdentifier: "LogInSucessfull", sender: nil)
+                            }
+                        }
                     }
-                    
-                }
-                
                 return true
             }
                 
@@ -127,8 +171,8 @@ private extension ConnectViewController {
     
     func showError(message:String) {
         DispatchQueue.main.async(execute: {
-            let alertControl = UIAlertController(title: NSLocalizedString("ERROR", comment: ""), message: message, preferredStyle: .alert)
-            alertControl.addAction(UIAlertAction(title: NSLocalizedString("CLOSE", comment: ""), style: .default, handler: nil))
+            let alertControl = UIAlertController(title: NSLocalizedString("ERROR", comment: ""), message: "Log in not sucessfull", preferredStyle: .alert)
+            alertControl.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
             
             self.present(alertControl, animated: true, completion: nil)
         })

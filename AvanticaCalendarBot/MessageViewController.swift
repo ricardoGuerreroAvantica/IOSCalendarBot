@@ -3,7 +3,6 @@
 //  AvanticaCalendarBot
 //
 //  Created by ricardo.guerrero on 8/17/18.
-//  Copyright © 2018 Jason Kim. All rights reserved.
 //
 
 import UIKit
@@ -12,6 +11,7 @@ import MSAL
 import ApiAI
 import Speech
 import JGProgressHUD
+import Alamofire
 
 struct User {
     let id: String;
@@ -21,6 +21,7 @@ struct User {
 
 class MessageViewController: JSQMessagesViewController, SFSpeechRecognizerDelegate, MenuModalViewControllerDelegate {
     
+    @IBOutlet weak var OptionsButton: UIBarButtonItem!
     let hud = JGProgressHUD(style: .dark)
     let speechSynthesizer = AVSpeechSynthesizer() //This speechSynthesizer
     public var speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en-US"))!;// language of the voice recognizer
@@ -28,10 +29,11 @@ class MessageViewController: JSQMessagesViewController, SFSpeechRecognizerDelega
     private var recognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine() //the engine of the audio framework
     public let voiceButton = UIButton(type: .custom) // the button that trigger the voice record fuction
-    var user = User(id: "1", name: "User") //user template information
+    var user = User(id: "1", name: "You") //user template information
     var bot = User(id: "2", name: "Bot") //bot fictional user
     var currentUser: User{return user;} // This varaible return the current user of the application
     var messages = [JSQMessage]();//This variable contains all the messages sended during the chat sesion
+    var pressState = true;
     
     func startVoiceMessage() {
         if audioEngine.isRunning {
@@ -54,8 +56,8 @@ class MessageViewController: JSQMessagesViewController, SFSpeechRecognizerDelega
         }
         let audioSession = AVAudioSession.sharedInstance()
         do {
-            try audioSession.setCategory(AVAudioSessionCategoryRecord)
-            try audioSession.setMode(AVAudioSessionModeMeasurement)
+            try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord, with: .defaultToSpeaker)
+            try audioSession.setMode(AVAudioSessionModeDefault)
             try audioSession.setActive(true, with: .notifyOthersOnDeactivation)
         } catch {
             print("audioSession properties weren't set because of an error.")
@@ -93,6 +95,7 @@ class MessageViewController: JSQMessagesViewController, SFSpeechRecognizerDelega
         })
         
         let recordingFormat = inputNode.outputFormat(forBus: 0)
+        
         inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer, when) in
             self.recognitionRequest?.append(buffer)
         }
@@ -108,8 +111,11 @@ class MessageViewController: JSQMessagesViewController, SFSpeechRecognizerDelega
         print("Say something, I'm listening!")
         
     }
+    
+    //Button to show Options menu.
     @IBAction func showOptions(_ sender: Any) {
-        buttonAction()
+        print("clear chat")
+        clearChatMessages()
     }
     
     func returnHome() {
@@ -124,31 +130,36 @@ extension MessageViewController{
     
     public override func didPressAccessoryButton(_ sender: UIButton!) {
     }
-    
-    func speechAndText(text: String) {
-        let message =   JSQMessage(senderId: "2", displayName: "Bot", text: text);
-        messages.append(message!);
-        let speechUtterance = AVSpeechUtterance(string : (message?.text)!);
-        speechSynthesizer.speak(speechUtterance)
-        hud.dismiss()
-        finishSendingMessage();
-    }
-    
+
     //Evaluates what happen when the SEND button is pressed
     override func didPressSend(_ button: UIButton!, withMessageText entryText: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
+        speechSynthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
         self.inputToolbar.contentView.rightBarButtonItem.isEnabled = false;
-        let request = ApiAI.shared().textRequest()
+        sendMessage(entryText : entryText, addToChat: true)
+    }
+    
+    func sendMessage(entryText : String, addToChat : Bool){
         
-        if let text = entryText, text != "" {
+        refreshTokenAuth();
+        let defaults = UserDefaults.standard;
+        let appId = defaults.string(forKey: "AppId");
+        let token = defaults.string(forKey: "UserToken");
+        print("Token: " + token!);
+        print("appId: " + appId!);
+        self.sendTokenToHeroku(token : token!, appId : appId!);
+        
+        let text = entryText;
+        let request = ApiAI.shared().textRequest()
+        if text != "" {
             hud.textLabel.text = "Loading"
             hud.show(in: self.view)
             
             let message =   JSQMessage(senderId: senderId, displayName: senderDisplayName, text: entryText);
             messages.append(message!);
-
+            
             let defaults = UserDefaults.standard;
             let appId: String!;
-            
+
             appId = defaults.string(forKey: "AppId");
             request?.query = text;
             print(appId);
@@ -160,30 +171,63 @@ extension MessageViewController{
             return
         }
         
-        
         request?.setMappedCompletionBlockSuccess({ (request, response) in
             let response = response as! AIResponse
             if let textResponse = response.result.fulfillment.speech {
-                self.speechAndText(text: textResponse)
+                if(addToChat){
+                    self.speechAndText(text: textResponse)
+                }
+                else{
+                    print(textResponse)
+                }
             }
         }, failure: { (request, error) in
             print(error!)
         })
         
         ApiAI.shared().enqueue(request)
-
-        
     }
-
     
+    //This function is in charge of adding the message from dialogflow response to the chat.
+    func speechAndText(text: String) {
+        let message =   JSQMessage(senderId: "2", displayName: "Bot", text: text);
+        messages.append(message!);
+        print(message?.text);
+        let speechUtterance = AVSpeechUtterance(string : (message?.text.replacingOccurrences(of: "▶", with: ""))!);
+        speechSynthesizer.speak(speechUtterance)
+        hud.dismiss()
+        finishSendingMessage();
+    }
 }
 
-//SET THE MESSAGES
+//------------------------------------------------------------------------
+//Sets all the initial variables to star the chat functions
+//------------------------------------------------------------------------
 extension MessageViewController{
+    
+    
+    
+    func back(sender: UIBarButtonItem) {
+        // Perform your custom actions
+        self.sendMessage(entryText: "cancel event now", addToChat: false);
+        speechSynthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
+        AuthenticationClass.sharedInstance?.disconnect()
+        
+        // Go back to the previous ViewController
+        self.navigationController?.popViewController(animated: true)
+    }
     
     override func viewDidLoad(){
         super.viewDidLoad()
 
+        //Hides the option button
+        self.OptionsButton.isEnabled=true;
+        
+        
+        //Create and set the new navigation back button
+        self.navigationItem.hidesBackButton = true
+        let newBackButton = UIBarButtonItem(title: "Log Out", style: UIBarButtonItemStyle.plain, target: self, action: #selector(MessageViewController.back(sender:)))
+        self.navigationItem.leftBarButtonItem = newBackButton
         
         // Set the current user
         self.senderId = currentUser.id;
@@ -198,15 +242,15 @@ extension MessageViewController{
         let _: Float = Float(inputToolbar.contentView.leftBarButtonContainerView.frame.size.height)
         let image = UIImage(named: "Microphone")
         voiceButton.setImage(image, for: .normal)
-        
+        voiceButton.imageView?.contentMode = .scaleAspectFit
         //checks the current language of the voice recorder
         checkLanguague()
         
         
-        
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(MessageViewController.buttonAction))
+        // Sets the voice recorder button
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(MessageViewController.voiceButtonTapped))
         tapGesture.numberOfTapsRequired = 1
-
+        voiceButton.addGestureRecognizer(tapGesture)
         voiceButton.frame = CGRect(x: 0, y: 0, width: 46, height: 36)
         inputToolbar.contentView.leftBarButtonItem.isHidden = true;
         inputToolbar.contentView.leftBarButtonItemWidth = 40
@@ -241,10 +285,59 @@ extension MessageViewController{
         _ = navigationController?.popToRootViewController(animated: true)
     }
     
-    func buttonAction() {
+    func voiceButtonTapped() {
         print("Button tapped")
-        self.performSegue(withIdentifier: "showModal", sender: nil)
+        
     }
+    
+    //This function is in charge of refresing the autentification token from microsoft graph.
+    func refreshTokenAuth() {
+        let scopes = ApplicationConstants.kScopes
+        
+        AuthenticationClass.sharedInstance?.connectToGraph( scopes: scopes) {
+            (result: ApplicationConstants.MSGraphError?, accessToken: String) -> Bool  in
+            if let graphError = result {
+                switch graphError {
+                case .nsErrorType(let nsError):
+                    print(NSLocalizedString("ERROR", comment: ""), nsError.userInfo)
+                    self.showError(message: NSLocalizedString("CHECK_LOG_ERROR", comment: ""))
+                }
+                return false
+            }
+            else {
+                // run on main thread!!
+                DispatchQueue.main.async {
+                    
+                    let defaults = UserDefaults.standard;
+                    //                    let token = (result?.accessToken)!
+                    //                        defaults.set(token,forKey: "UserToken");
+                    
+                    let appId: String!
+                    appId = defaults.string(forKey: "AppId")
+                    let logInStarted = defaults.string(forKey: "logInStarted")
+                        defaults.set(nil, forKey: "logInStarted")
+                        if (appId != nil){
+                            let token = defaults.string(forKey: "UserToken");
+                            print("Token: " + token!);
+                            print( "LogInSucessfull")
+                        }
+                    }
+                }
+                return true
+            }
+            
+        }
+    
+    
+    func showError(message:String) {
+        DispatchQueue.main.async(execute: {
+            let alertControl = UIAlertController(title: NSLocalizedString("ERROR", comment: ""), message: message, preferredStyle: .alert)
+            alertControl.addAction(UIAlertAction(title: NSLocalizedString("CLOSE", comment: ""), style: .default, handler: nil))
+            
+            self.present(alertControl, animated: true, completion: nil)
+        })
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "showModal"){
@@ -324,15 +417,26 @@ extension MessageViewController{
 }
 
 //------------------------------------------------------------------------
+//This extension contains the methods to clear the chat bubbles from the screen.
+//------------------------------------------------------------------------
+extension MessageViewController{
+    func clearChatMessages(){
+        messages = []
+        collectionView.reloadData()
+    }
+}
+
+
+//------------------------------------------------------------------------
 //When the application starts create the first message
 //------------------------------------------------------------------------
 extension MessageViewController{
     func getMessages() -> [JSQMessage]{
         var messages = [JSQMessage]()
         
-        let message1 = JSQMessage(senderId: "2", displayName: "Bot", text: "Hello, how i can help you today?")
+        let message1 = JSQMessage(senderId: "2", displayName: "Bot", text: "Hello, how i can help you today?\n\nYou can ask me for \"Help\" at any moment.")
 
-        let speechUtterance = AVSpeechUtterance(string : "Hello, how i can help you today?!");
+        let speechUtterance = AVSpeechUtterance(string : "Hello, how I can help you today?!");
         speechSynthesizer.speak(speechUtterance)
         
         messages.append(message1!);
@@ -341,6 +445,24 @@ extension MessageViewController{
     }
 }
 
+
+//------------------------------------------------------------------------
+// this extension contains the request to alamofire to send the token node to the heroku server
+//------------------------------------------------------------------------
+extension MessageViewController{
+    public func sendTokenToHeroku(token: String, appId:String){
+        Alamofire.request("https://sjo-calendar-bot.azurewebsites.net/signIn?token_body=\(token)&state=IOS&session_state=\(appId.lowercased())").responseJSON { response in
+            
+            if let json = response.result.value {
+                print("JSON: \(json)") // serialized json response
+            }
+            
+            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                print("Data: \(utf8Text)") // original server data as UTF8 string
+            }
+        }
+    }
+}
 
 //------------------------------------------------------------------------
 // this extension contains all the methods from JSQMessages POD that are in
@@ -355,7 +477,7 @@ extension MessageViewController{
         
         return NSAttributedString(string: messageUserName!);
     }
-    
+    //
     //Set the size of the Tag message near the chat
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, layout collectionViewLayout: JSQMessagesCollectionViewFlowLayout!, heightForMessageBubbleTopLabelAt indexPath: IndexPath!) -> CGFloat {
         return 15
@@ -371,9 +493,9 @@ extension MessageViewController{
         let bubbleFactory = JSQMessagesBubbleImageFactory();
         let message = messages[indexPath.row];
         if currentUser.id == message.senderId{
-            return bubbleFactory?.outgoingMessagesBubbleImage(with: .blue);
+            return bubbleFactory?.outgoingMessagesBubbleImage(with: UIColor(red:0.18, green:0.18, blue:0.27, alpha:1.0));
         } else{
-            return bubbleFactory?.incomingMessagesBubbleImage(with: .blue);
+            return bubbleFactory?.incomingMessagesBubbleImage(with: UIColor(red:0.24, green:0.68, blue:0.78, alpha:1.0));
         }
     }
     
@@ -387,4 +509,6 @@ extension MessageViewController{
         return messages[indexPath.row]
     }
 }
+
+
 

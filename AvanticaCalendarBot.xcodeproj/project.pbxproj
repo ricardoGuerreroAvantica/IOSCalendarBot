@@ -100,8 +100,8 @@
 				CFB93F001F38E5EA00111610 /* AuthenticationClass.swift */,
 				969D30041C57F5A6007E9DB0 /* AuthenticationConstants.swift */,
 				969D30061C5833F4007E9DB0 /* ConnectViewController.swift */,
-				45859E612127296400D77FE0 /* MessageViewController.swift */,
 				45FB9AA52138A718007C73F5 /* menuModalViewController.swift */,
+				45859E612127296400D77FE0 /* MessageViewController.swift */,
 			);
 			path = AvanticaCalendarBot;
 			sourceTree = "<group>";
@@ -413,7 +413,7 @@
 				);
 				INFOPLIST_FILE = AvanticaCalendarBot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = avantica.com.calendar.bot.test;
+				PRODUCT_BUNDLE_IDENTIFIER = net.avantica.bot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = AvanticaCalendarBot/AvanticaCalendarBot.h;
@@ -437,7 +437,7 @@
 				);
 				INFOPLIST_FILE = AvanticaCalendarBot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = avantica.com.calendar.bot.test;
+				PRODUCT_BUNDLE_IDENTIFIER = net.avantica.bot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = AvanticaCalendarBot/AvanticaCalendarBot.h;

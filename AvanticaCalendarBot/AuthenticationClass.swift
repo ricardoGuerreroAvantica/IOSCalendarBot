@@ -1,4 +1,3 @@
-//
 //  AuthenticationClass.swift
 //  Graph-iOS-Swift-Connect
 
@@ -75,26 +74,22 @@ class AuthenticationClass {
                 try authenticationProvider.acquireTokenSilent(forScopes: scopes, user: authenticationProvider.users().first) { (result, error) in
                     
                     if error == nil {
-                        
+                        let defaults = UserDefaults.standard;
                         self.accessToken = (result?.accessToken)!
                         _ = completion(nil, self.accessToken);
                         
-                        let defaults = UserDefaults.standard;
+                        
                         defaults.set(self.accessToken,forKey: "UserToken");
-                        
-                        
-                        
+
                         if (defaults.string(forKey: "AppId")==nil){
                             defaults.set(UUID().uuidString,forKey: "AppId");
                         }
-                        print(defaults.string(forKey: "AppId"))
-                        
+                        print(defaults.string(forKey: "AppId")!)
+                        print(defaults.string(forKey: "UserToken")!)
                         self.sendTokenToHeroku(token: defaults.string(forKey: "UserToken")!, appId: defaults.string(forKey: "AppId")!)
-                        //EL USUARIO SE LOGGEO, ENVIA EL TOKE
-                        //FALTA IMPLEMENTAR
                         
                     } else {
-                        
+                        self.disconnect()
                         //"Could not acquire token silently: \(error ?? "No error information" as! Error )"
                        var _ = completion(ApplicationConstants.MSGraphError.nsErrorType(error: error! as NSError), "");
                         
@@ -141,7 +136,7 @@ class AuthenticationClass {
             try authenticationProvider.remove(authenticationProvider.users().first)
             
         } catch _ {
-            
+            print("log out fail");
         }
         
     }
@@ -155,8 +150,53 @@ class AuthenticationClass {
         return subString as String;
     }
 
+    
     func sendTokenToHeroku(token: String, appId:String){
-        Alamofire.request("https://blooming-lake-64865.herokuapp.com/signIn?token_body=\(token)&state=IOS&session_state=\(appId.lowercased())").responseJSON { response in
+        let parameters = [
+            "token_body" : token,
+            "state" : "mobile",
+            "session_state" : appId.lowercased()
+        ]
+        
+        Alamofire.request("https://sjo-calendar-bot.azurewebsites.net/signIn", method: .post, parameters: parameters).responseJSON { response in
+            guard case let .failure(error) = response.result else { return }
+            
+            if let error = error as? AFError {
+                switch error {
+                case .invalidURL(let url):
+                    print("Invalid URL: \(url) - \(error.localizedDescription)")
+                case .parameterEncodingFailed(let reason):
+                    print("Parameter encoding failed: \(error.localizedDescription)")
+                    print("Failure Reason: \(reason)")
+                case .multipartEncodingFailed(let reason):
+                    print("Multipart encoding failed: \(error.localizedDescription)")
+                    print("Failure Reason: \(reason)")
+                case .responseValidationFailed(let reason):
+                    print("Response validation failed: \(error.localizedDescription)")
+                    print("Failure Reason: \(reason)")
+                    
+                    switch reason {
+                    case .dataFileNil, .dataFileReadFailed:
+                        print("Downloaded file could not be read")
+                    case .missingContentType(let acceptableContentTypes):
+                        print("Content Type Missing: \(acceptableContentTypes)")
+                    case .unacceptableContentType(let acceptableContentTypes, let responseContentType):
+                        print("Response content type: \(responseContentType) was unacceptable: \(acceptableContentTypes)")
+                    case .unacceptableStatusCode(let code):
+                        print("Response status code was unacceptable: \(code)")
+                    }
+                case .responseSerializationFailed(let reason):
+                    print("Response serialization failed: \(error.localizedDescription)")
+                    print("Failure Reason: \(reason)")
+                }
+                
+                print("Underlying error: \(error.underlyingError)")
+            } else if let error = error as? URLError {
+                print("URLError occurred: \(error)")
+            } else {
+                print("Unknown error: \(error)")
+            }
+            
             
             if let json = response.result.value {
                 print("JSON: \(json)") // serialized json response

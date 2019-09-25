@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         let configuration = AIDefaultConfiguration()
-        configuration.clientAccessToken = "5d9f6d33a7db416e831bdfad105a2e36"
+        configuration.clientAccessToken = "1a9afd430bf14e1caafe7ade73532de4"
         
         let apiai = ApiAI.shared()
         apiai?.configuration = configuration

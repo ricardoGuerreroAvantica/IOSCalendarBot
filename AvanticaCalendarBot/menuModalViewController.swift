@@ -3,7 +3,6 @@
 //  AvanticaCalendarBot
 //
 //  Created by ricardo.guerrero on 8/30/18.
-//  Copyright © 2018 Jason Kim. All rights reserved.
 //
 
 import UIKit

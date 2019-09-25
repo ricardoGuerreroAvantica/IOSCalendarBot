@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uGc-al-Cx3">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,68 +19,89 @@
                         <viewControllerLayoutGuide type="bottom" id="kJJ-eU-XYD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bjh-3P-mNL">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aaL-de-myB">
-                                <rect key="frame" x="1" y="64" width="318" height="504"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
+                            </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ffk-iV-PbL">
+                                <rect key="frame" x="169.66666666666666" y="680" width="37" height="37"/>
+                                <color key="color" red="0.2725624144077301" green="0.58256793022155762" blue="0.99852830171585083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avantica_logo" translatesAutoresizingMaskIntoConstraints="NO" id="0FR-Jc-WMR">
+                                <rect key="frame" x="252" y="46" width="101" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="101" id="Hic-qZ-Oe4"/>
+                                    <constraint firstAttribute="height" constant="29" id="fhm-an-J0o"/>
+                                </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rPH-Aq-OvZ">
-                                <rect key="frame" x="76" y="505" width="168" height="55"/>
-                                <color key="backgroundColor" red="0.84305417537689209" green="0.2245618999004364" blue="0.067955687642097473" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="ZgX-TY-9LQ"/>
-                                </constraints>
+                                <rect key="frame" x="110" y="700" width="158" height="38"/>
+                                <color key="backgroundColor" red="0.18431372549019609" green="0.1764705882352941" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="tintColor" red="0.3509848794" green="0.41508845059999999" blue="0.88028254530000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="ENTER">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Enter">
+                                    <color key="titleColor" red="0.99993366003036499" green="1" blue="0.9998818039894104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="connect:" destination="EER-pl-Qyl" eventType="touchUpInside" id="UMW-a3-N4u"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ffk-iV-PbL">
-                                <rect key="frame" x="142" y="436" width="37" height="37"/>
-                                <color key="color" red="0.2725624144077301" green="0.58256793022155762" blue="0.99852830171585083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avantica Chat Bot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HqG-Rj-bSj">
-                                <rect key="frame" x="1" y="79" width="318" height="21"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Img_bot" translatesAutoresizingMaskIntoConstraints="NO" id="xaD-LS-qfj">
+                                <rect key="frame" x="79.666666666666686" y="386" width="216" height="182"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AVANTICA’S CHATBOT HELPS YOU" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w81-c9-iqx">
+                                <rect key="frame" x="56" y="576" width="267" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Dbo-7b-11w"/>
+                                    <constraint firstAttribute="height" constant="21" id="yTp-AZ-TOq"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <color key="textColor" red="0.99597030878067017" green="0.99231809377670288" blue="0.99198645353317261" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0039215686274509803" green="0.41568627450980389" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="o8k-nA-XN1">
+                                <rect key="frame" x="167.66666666666666" y="635" width="39" height="37"/>
+                            </pageControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="creating new events" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veR-q8-meZ">
+                                <rect key="frame" x="17" y="605" width="342" height="22"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="rPH-Aq-OvZ" firstAttribute="leading" secondItem="bjh-3P-mNL" secondAttribute="leadingMargin" constant="60" id="8Ln-P8-SWc"/>
-                            <constraint firstItem="HqG-Rj-bSj" firstAttribute="leading" secondItem="bjh-3P-mNL" secondAttribute="leading" constant="1" id="AVD-Sv-GnI"/>
-                            <constraint firstItem="kJJ-eU-XYD" firstAttribute="top" secondItem="aaL-de-myB" secondAttribute="bottom" id="HwV-pL-QOv"/>
-                            <constraint firstAttribute="trailing" secondItem="aaL-de-myB" secondAttribute="trailing" constant="1" id="Mkd-P7-IdK"/>
-                            <constraint firstItem="aaL-de-myB" firstAttribute="leading" secondItem="bjh-3P-mNL" secondAttribute="leading" constant="1" id="MxY-RK-Yva"/>
-                            <constraint firstItem="rPH-Aq-OvZ" firstAttribute="centerX" secondItem="bjh-3P-mNL" secondAttribute="centerX" id="XcB-3F-jFB"/>
-                            <constraint firstItem="rPH-Aq-OvZ" firstAttribute="top" secondItem="ffk-iV-PbL" secondAttribute="bottom" constant="32" id="c3w-Y3-Lrb"/>
-                            <constraint firstAttribute="trailing" secondItem="HqG-Rj-bSj" secondAttribute="trailing" constant="1" id="ce2-aS-0VE"/>
-                            <constraint firstItem="HqG-Rj-bSj" firstAttribute="top" secondItem="xhd-ZI-IgT" secondAttribute="bottom" constant="15" id="e8z-fW-gW4"/>
-                            <constraint firstItem="aaL-de-myB" firstAttribute="top" secondItem="xhd-ZI-IgT" secondAttribute="bottom" id="lqp-Gb-OY9"/>
-                            <constraint firstItem="ffk-iV-PbL" firstAttribute="centerX" secondItem="rPH-Aq-OvZ" secondAttribute="centerX" id="rNN-SC-9Me"/>
-                            <constraint firstItem="kJJ-eU-XYD" firstAttribute="top" secondItem="rPH-Aq-OvZ" secondAttribute="bottom" constant="8" symbolic="YES" id="zOr-uH-UgE"/>
+                            <constraint firstItem="kJJ-eU-XYD" firstAttribute="top" secondItem="rPH-Aq-OvZ" secondAttribute="bottom" constant="40" id="AJG-fJ-54A"/>
+                            <constraint firstItem="veR-q8-meZ" firstAttribute="top" secondItem="w81-c9-iqx" secondAttribute="bottom" constant="8" id="BEX-rh-Wko"/>
+                            <constraint firstItem="w81-c9-iqx" firstAttribute="top" secondItem="xaD-LS-qfj" secondAttribute="bottom" constant="8" id="Df3-Rm-zPB"/>
+                            <constraint firstItem="w81-c9-iqx" firstAttribute="centerX" secondItem="veR-q8-meZ" secondAttribute="centerX" constant="1.5" id="Gr7-Y0-M52"/>
+                            <constraint firstItem="w81-c9-iqx" firstAttribute="top" secondItem="xaD-LS-qfj" secondAttribute="bottom" constant="8" id="HGo-mf-xCP"/>
+                            <constraint firstItem="veR-q8-meZ" firstAttribute="centerX" secondItem="ffk-iV-PbL" secondAttribute="centerX" id="K6M-gV-JJR"/>
+                            <constraint firstItem="xaD-LS-qfj" firstAttribute="centerX" secondItem="w81-c9-iqx" secondAttribute="centerX" constant="-1.8333333333333144" id="LJf-lv-Xdg"/>
+                            <constraint firstAttribute="trailing" secondItem="aaL-de-myB" secondAttribute="trailing" id="M5g-56-wS9"/>
+                            <constraint firstItem="aaL-de-myB" firstAttribute="bottom" secondItem="kJJ-eU-XYD" secondAttribute="top" id="NdY-KE-hqZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rPH-Aq-OvZ" secondAttribute="trailing" constant="91" id="bEC-Le-6Hf"/>
+                            <constraint firstItem="aaL-de-myB" firstAttribute="top" secondItem="xhd-ZI-IgT" secondAttribute="bottom" id="cya-tT-lsC"/>
+                            <constraint firstItem="0FR-Jc-WMR" firstAttribute="top" secondItem="bjh-3P-mNL" secondAttribute="top" constant="46" id="dGe-8n-jKA"/>
+                            <constraint firstItem="rPH-Aq-OvZ" firstAttribute="centerX" secondItem="w81-c9-iqx" secondAttribute="centerX" id="fuc-jU-QXD"/>
+                            <constraint firstItem="aaL-de-myB" firstAttribute="leading" secondItem="bjh-3P-mNL" secondAttribute="leading" id="hcq-MI-E6b"/>
+                            <constraint firstAttribute="trailing" secondItem="0FR-Jc-WMR" secondAttribute="trailing" constant="22" id="j9s-1K-YLy"/>
+                            <constraint firstItem="rPH-Aq-OvZ" firstAttribute="top" secondItem="o8k-nA-XN1" secondAttribute="bottom" constant="28" id="keV-o3-6EP"/>
+                            <constraint firstItem="o8k-nA-XN1" firstAttribute="top" secondItem="veR-q8-meZ" secondAttribute="bottom" constant="8" id="mdW-8S-YqK"/>
+                            <constraint firstItem="rPH-Aq-OvZ" firstAttribute="leading" secondItem="bjh-3P-mNL" secondAttribute="leadingMargin" constant="94" id="mrQ-i7-S9x"/>
+                            <constraint firstItem="veR-q8-meZ" firstAttribute="leading" secondItem="bjh-3P-mNL" secondAttribute="leadingMargin" constant="1" id="mxu-K8-yf5"/>
+                            <constraint firstItem="ffk-iV-PbL" firstAttribute="top" secondItem="veR-q8-meZ" secondAttribute="bottom" constant="53" id="oWb-Wg-FGg"/>
+                            <constraint firstItem="w81-c9-iqx" firstAttribute="leading" secondItem="bjh-3P-mNL" secondAttribute="leadingMargin" constant="40" id="rhR-2P-wAu"/>
+                            <constraint firstItem="o8k-nA-XN1" firstAttribute="leading" secondItem="ffk-iV-PbL" secondAttribute="leading" constant="-2" id="sVZ-AH-Ta3"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Avantica Calendar Bot Connect" largeTitleDisplayMode="never" id="GsL-UA-k9u">
-                        <barButtonItem key="rightBarButtonItem" title="Disconnect" id="bLc-Iq-hXP">
-                            <connections>
-                                <action selector="disconnect:" destination="EER-pl-Qyl" id="kKL-5X-xet"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Avantica Calendar Bot Connect" largeTitleDisplayMode="never" id="GsL-UA-k9u"/>
                     <connections>
                         <outlet property="activityIndicator" destination="ffk-iV-PbL" id="Ym4-so-CX4"/>
                         <outlet property="connectButton" destination="rPH-Aq-OvZ" id="Nzr-VV-eBU"/>
+                        <outlet property="pageController" destination="o8k-nA-XN1" id="cSB-MY-Gne"/>
+                        <outlet property="textLabelScroll" destination="veR-q8-meZ" id="Ek6-YK-mi6"/>
                         <segue destination="yz6-PF-eAc" kind="push" identifier="LogInSucessfull" id="879-aK-VtE"/>
                     </connections>
                 </viewController>
@@ -97,16 +118,16 @@
                         <viewControllerLayoutGuide type="bottom" id="VXs-wK-czP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2xb-L5-yWZ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" title="Calendar Bot" largeTitleDisplayMode="never" id="QPd-rJ-N4A" userLabel="Log out">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="Mll-xC-qo1">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Jqr-Yg-DMl">
-                                <rect key="frame" x="212" y="7" width="92" height="30"/>
+                                <rect key="frame" x="267" y="7" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Options"/>
+                                <state key="normal" title="Clear Chat"/>
                                 <connections>
                                     <action selector="showOptions:" destination="yz6-PF-eAc" eventType="touchUpInside" id="Vpp-h7-vKY"/>
                                 </connections>
@@ -117,12 +138,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="OptionsButton" destination="Mll-xC-qo1" id="Cg0-2V-KKa"/>
                         <segue destination="TMx-yJ-q9W" kind="presentation" identifier="showModal" modalPresentationStyle="overCurrentContext" id="U1A-cR-MFd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Irh-ZB-EfF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3649" y="-2035"/>
+            <point key="canvasLocation" x="-3650.4000000000001" y="-2035.7142857142858"/>
         </scene>
         <!--Menu Modal View Controller-->
         <scene sceneID="YYS-7n-Tgj">
@@ -133,17 +155,17 @@
                         <viewControllerLayoutGuide type="bottom" id="Wyx-DW-9UD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dqV-Bl-lmb">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ktM-IL-5zS">
-                                <rect key="frame" x="-4" y="65" width="328" height="503"/>
+                                <rect key="frame" x="-4" y="89" width="383" height="699"/>
                                 <subviews>
                                     <view opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="knw-nx-Omd">
-                                        <rect key="frame" x="76" y="291" width="176" height="89"/>
+                                        <rect key="frame" x="103.66666666666669" y="291" width="176" height="89"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YFm-bZ-5e1">
-                                                <rect key="frame" x="30" y="11" width="121" height="33"/>
+                                                <rect key="frame" x="29.999999999999986" y="11" width="121.00000000000001" height="33"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="Return to Home"/>
                                                 <connections>
@@ -151,7 +173,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcz-07-G3u">
-                                                <rect key="frame" x="61" y="52" width="58" height="33"/>
+                                                <rect key="frame" x="60.999999999999986" y="52" width="58" height="33"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="Log out"/>
                                                 <connections>
@@ -170,10 +192,10 @@
                                         </constraints>
                                     </view>
                                     <view opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="guV-gt-sLA">
-                                        <rect key="frame" x="26" y="235" width="276" height="48"/>
+                                        <rect key="frame" x="53.666666666666657" y="235" width="276" height="48"/>
                                         <subviews>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eE9-LE-Mkb">
-                                                <rect key="frame" x="143" y="10" width="120" height="29"/>
+                                                <rect key="frame" x="143.33333333333334" y="10" width="120.00000000000003" height="29"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="120" id="pkg-kI-MUL"/>
                                                 </constraints>
@@ -186,7 +208,7 @@
                                                 </connections>
                                             </segmentedControl>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voice detector: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOp-YN-nOU">
-                                                <rect key="frame" x="14" y="12" width="121" height="21"/>
+                                                <rect key="frame" x="14.333333333333343" y="12" width="121" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -236,7 +258,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uGc-al-Cx3" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="O9A-Et-agD">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -250,9 +272,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Background" width="509" height="707"/>
+        <image name="Avantica_logo" width="101" height="29"/>
+        <image name="Background" width="1042" height="1853"/>
+        <image name="Img_bot" width="216" height="182"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6ge-8Y-BBF"/>
+        <segue reference="879-aK-VtE"/>
     </inferredMetricsTieBreakers>
 </document>
